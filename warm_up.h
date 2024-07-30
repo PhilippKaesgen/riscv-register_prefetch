@@ -45,12 +45,11 @@ if (num_bytes > 0) {\
       CAT(func,8)(preload);   \
    /* handle trailing bytes */\
   if (preload < end) {\
-    unsigned long end1 = end-1UL;\
-    if (bit(end1, 2))\
+    if (bit(end, 2))\
         CAT(func,4)(preload);\
-    if (bit(end1, 1))\
+    if (bit(end, 1))\
         CAT(func,2)(preload);\
-    if (bit(end1, 0))\
+    if (bit(end, 0))\
         CAT(func,1)(preload);\
   }\
 }
